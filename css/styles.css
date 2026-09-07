@@ -1,0 +1,150 @@
+
+/* CONFIGURACIÓN GENERAL */
+
+body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 1rem;
+}
+
+
+/* IFRAME */
+
+body > .container-fluid iframe {
+    width: 100%;
+    height: 350px;
+    border: none;
+}
+
+
+/* ARCOIRIS */
+
+.arcoiris {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.rojo {
+    color: red;
+}
+
+.naranja {
+    color: orange;
+}
+
+.amarillo {
+    color: yellow;
+}
+
+.verde {
+    color: green;
+}
+
+.azul {
+    color: blue;
+}
+
+.morado {
+    color: purple;
+}
+
+.rosado {
+    color: pink;
+}
+
+
+/* CUENTO */
+
+.cuento p::first-letter {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.cuento p::first-line {
+    font-weight: bold;
+}
+
+
+/* GRID DE AUDIOS */
+
+.grid-audios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+
+/* GRID DE VIDEOS */
+
+.grid-videos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.grid-videos iframe {
+    width: 100%;
+    height: 250px;
+    border: none;
+}
+
+
+/* GRID DE INTEGRANTES */
+/* 4 COLUMNAS Y 2 FILAS */
+
+.grid-integrantes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.grid-integrantes div {
+    background-color: #555;
+    padding: 15px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 576px) {
+
+    body {
+        background-color: dodgerblue;
+        font-size: 0.5rem;
+    }
+
+    /* Elementos apilados */
+
+    .grid-audios {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-videos {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-integrantes {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    /* Menú vertical */
+
+    .navbar .container {
+        flex-direction: column;
+    }
+
+    /* Arcoíris */
+
+    .arcoiris {
+        font-size: 30px;
+    }
+
+    /* Footer */
+
+    .grid-integrantes div {
+        background-color: #222;
+    }
+
+}
