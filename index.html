@@ -11,6 +11,12 @@
 
     <!-- CSS propio -->
     <link rel="stylesheet" href="./css/styles.css">
+
+    <!--google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+    <!--favicon-->
+    <link rel="icon" type="image/png" href="https://cdn.iconscout.com/icon/premium/png-512-thumb/clase-de-matematicas-icon-svg-download-png-981306.png?f=webp&w=256">
 </head>
 
 <body>
@@ -72,6 +78,29 @@
 
     </div>
 
+    <!--que mascota eres-->
+    <div class="container text-center mt-4">
+
+        <h2>🐾 ¿Qué mascota eres?</h2>
+
+        <select id="mascota" class="form-select w-50 mx-auto">
+            <option value="">Selecciona una mascota</option>
+            <option value="perro">🐶 Perro</option>
+            <option value="gato">🐱 Gato</option>
+            <option value="conejo">🐰 Conejo</option>
+            <option value="hamster">🐹 Hámster</option>
+        </select>
+
+        <button class="btn btn-primary mt-3" onclick="mostrarResultado()">
+            Descubrir
+        </button>
+
+        <div id="resultado" class="alert alert-info mt-3 w-50 mx-auto">
+            Aquí aparecerá el resultado.
+        </div>
+
+    </div>
+
 
     <!-- ARCOIRIS -->
     <section class="arcoiris text-center p-4">
@@ -94,7 +123,11 @@
         <h2>El cuento</h2>
 
         <p>
-            Había una vez un perro que se llamaba pegamento, un dia se sentó y se murio.
+            Toto miró al cielo y vio una nube con forma de hueso.
+            —¡Un hueso gigante! —ladró contento.
+            Corrió y corrió, pero la nube se alejaba. Se sentó cansado, mirando cómo el viento la movía. Entonces, otra nube apareció, con forma de perro.
+            —¡Un amigo! —dijo Toto.
+            Desde ese día jugaba con las nubes todas las tardes.
         </p>
 
     </section>
@@ -193,6 +226,28 @@
         </div>
 
     </footer>
+    <script>
+    function mostrarResultado() {
 
+        let mascota = document.getElementById("mascota").value;
+        let resultado = document.getElementById("resultado");
+
+        if (mascota === "perro") {
+            resultado.innerHTML = "🐶 Eres una persona activa y sociable.";
+        }
+        else if (mascota === "gato") {
+            resultado.innerHTML = "🐱 Eres una persona independiente y tranquila.";
+        }
+        else if (mascota === "conejo") {
+            resultado.innerHTML = "🐰 Eres una persona tranquila y cariñosa.";
+        }
+        else if (mascota === "hamster") {
+            resultado.innerHTML = "🐹 Eres una persona curiosa y divertida.";
+        }
+        else {
+            resultado.innerHTML = "Selecciona una mascota.";
+        }
+    }
+    </script>
 </body>
 </html>
