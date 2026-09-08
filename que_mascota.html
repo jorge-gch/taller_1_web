@@ -31,5 +31,28 @@
         </div>
 
     </div>
+    <script>
+    function mostrarResultado() {
+
+        let mascota = document.getElementById("mascota").value;
+        let resultado = document.getElementById("resultado");
+
+        if (mascota === "perro") {
+            resultado.innerHTML = "🐶 Eres una persona activa y sociable.";
+        }
+        else if (mascota === "gato") {
+            resultado.innerHTML = "🐱 Eres una persona independiente y tranquila.";
+        }
+        else if (mascota === "conejo") {
+            resultado.innerHTML = "🐰 Eres una persona tranquila y cariñosa.";
+        }
+        else if (mascota === "hamster") {
+            resultado.innerHTML = "🐹 Eres una persona curiosa y divertida.";
+        }
+        else {
+            resultado.innerHTML = "Selecciona una mascota.";
+        }
+    }
+    </script>
 </body>
 </html>
