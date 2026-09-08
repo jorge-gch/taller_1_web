@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>que mascota eres</title>
+    <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+<body>
+    <!--que mascota eres-->
+    <div class="container text-center mt-4">
+
+        <h2>🐾 ¿Qué mascota eres?</h2>
+
+        <select id="mascota" class="form-select w-50 mx-auto">
+            <option value="">Selecciona una mascota</option>
+            <option value="perro">🐶 Perro</option>
+            <option value="gato">🐱 Gato</option>
+            <option value="conejo">🐰 Conejo</option>
+            <option value="hamster">🐹 Hámster</option>
+        </select>
+
+        <button class="btn btn-primary mt-3" onclick="mostrarResultado()">
+            Descubrir
+        </button>
+
+        <div id="resultado" class="alert alert-info mt-3 w-50 mx-auto">
+            Aquí aparecerá el resultado.
+        </div>
+
+    </div>
+</body>
+</html>
