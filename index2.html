@@ -8,7 +8,7 @@
     <style>
         .grid-area {
             display: grid;
-            grid-template-rows: 12vh 7vh 71vh 5vh;
+            grid-template-rows: 12vh 7vh 73vh 5vh;
 
             gap: 5px;
 
@@ -25,7 +25,7 @@
         .nav a{
             color: white;
             text-decoration: none;
-            margin: 10px 20px;
+            margin: 0 10px;
         }
 
 
@@ -55,7 +55,12 @@
 
         .footer {
             grid-area: footer;
-            background: #8b5cf6;
+            background: #66cc8d;
+        }
+
+        .footer a{
+            color: white;
+            text-decoration: none;
         }
 
         .area-item {
@@ -76,6 +81,41 @@
             height: 50px;
             margin-right: 10px;
         }
+        @media (max-width: 576px) {
+            .grid-area {
+                display: grid;
+                grid-template-rows: 12vh 7vh 8vh 65vh 5vh;
+
+                gap: 5px;
+
+                grid-template-areas:
+                    "header header header header"
+                    "nav nav nav nav"
+                    "sidebar sidebar sidebar sidebar"
+                    "contenido contenido contenido contenido"
+                    "footer footer footer footer";
+            }
+
+            .sidebar div a{
+                display: flex;
+                color: white;
+                text-decoration: none;
+                margin: 0px 5px;
+            }
+            .sidebar div{
+                display: flex;
+            }
+            h1{
+                font-size: 1.2rem;
+            }
+            .header{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+
 
     </style>
 </head>
@@ -118,10 +158,10 @@
             <div>
                 <a href="cuento.html" target="frame">Cuento</a>
                 <a href="arcoiris.html" target="frame">Arcoiris</a>
-                <a href="carrusel.html" target="frame">Mosaico multimedia</a>
+                <a href="carrusel.html" target="frame">Mosaico</a>
                 <a href="audios.html" target="frame">Audio</a>
                 <a href="videos.html" target="frame">Videos</a>
-                <a href="que_mascota.html" target="frame">Que mascota eres!!</a>
+                <a href="que_mascota.html" target="frame">Que mascota!</a>
             </div>
         </div>
 
@@ -139,6 +179,5 @@
         </div>
 
     </div>
-
 </body>
 </html>

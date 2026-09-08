@@ -65,6 +65,14 @@ body > .container-fluid iframe {
     font-weight: bold;
 }
 
+.footer_full{
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
 /* GRID DE AUDIOS */
 
