@@ -1,10 +1,16 @@
+```html
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Formulario</title>
+
 </head>
 
 <body>
@@ -15,30 +21,39 @@
 
         <!-- Nombre -->
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre"  name="nombre" placeholder="Escribe tu nombre">
+
+        <input type="text" id="nombre" name="nombre"
+        placeholder="Escribe tu nombre" >
 
         <br><br>
 
         <!-- Correo -->
         <label for="correo">Correo:</label>
-        <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com">
+
+        <input type="email" id="correo" name="correo"
+        placeholder="ejemplo@gmail.com">
 
         <br><br>
 
         <!-- Contraseña -->
         <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password">
+
+        <input type="password" id="password" name="password"
+        placeholder="Escribe tu contraseña">
 
         <br><br>
 
         <!-- Edad -->
         <label for="edad">Edad:</label>
-        <input type="number" id="edad" name="edad" min="1" max="100">
+
+        <input type="number" id="edad" name="edad"
+        min="1" max="100" value="18">
 
         <br><br>
 
         <!-- Fecha -->
         <label for="fecha">Fecha de nacimiento:</label>
+
         <input type="date" id="fecha" name="fecha">
 
         <br><br>
@@ -46,10 +61,14 @@
         <!-- Género -->
         <p>Género:</p>
 
-        <input type="radio" id="masculino" name="genero" value="masculino">
+        <input type="radio" id="masculino" name="genero"
+        value="masculino" checked>
+
         <label for="masculino">Masculino</label>
 
-        <input type="radio" id="femenino" name="genero" value="femenino">
+        <input type="radio" id="femenino" name="genero"
+        value="femenino">
+
         <label for="femenino">Femenino</label>
 
         <br><br>
@@ -58,11 +77,19 @@
         <label for="ciudad">Ciudad:</label>
 
         <select id="ciudad" name="ciudad">
+
             <option value="">Selecciona una ciudad</option>
-            <option value="bucaramanga">Bucaramanga</option>
+
+            <option value="bucaramanga" selected>
+                Bucaramanga
+            </option>
+
             <option value="bogota">Bogotá</option>
+
             <option value="medellin">Medellín</option>
+
             <option value="cali">Cali</option>
+
         </select>
 
         <br><br>
@@ -70,27 +97,37 @@
         <!-- Intereses -->
         <p>Intereses:</p>
 
-        <input type="checkbox" id="programacion" name="intereses" value="programacion">
+        <input type="checkbox" id="programacion"
+        name="intereses" value="programacion" checked>
+
         <label for="programacion">Programación</label>
 
-        <input type="checkbox" id="videojuegos" name="intereses" value="videojuegos">
+        <input type="checkbox" id="videojuegos"
+        name="intereses" value="videojuegos">
+
         <label for="videojuegos">Videojuegos</label>
 
-        <input type="checkbox" id="deportes" name="intereses" value="deportes">
+        <input type="checkbox" id="deportes"
+        name="intereses" value="deportes" checked>
+
         <label for="deportes">Deportes</label>
 
         <br><br>
 
         <!-- Comentario -->
         <label for="comentario">Comentario:</label>
+
         <br>
-        <textarea id="comentario" name="comentario" rows="5" cols="40"
-            placeholder="Escribe un comentario..."></textarea>
+
+        <textarea id="comentario" name="comentario"
+        rows="5" cols="40"
+        placeholder="Escribe un comentario..."></textarea>
 
         <br><br>
 
         <!-- Botones -->
         <button type="submit">Enviar</button>
+
         <button type="reset">Limpiar</button>
 
     </form>
@@ -98,3 +135,5 @@
 </body>
 
 </html>
+```
+
