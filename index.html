@@ -1,253 +1,183 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-    <title>Bootstrap y Grid - Animales Domésticos</title>
+    <style>
+        .grid-area {
+            display: grid;
+            grid-template-rows: 12vh 7vh 73vh 5vh;
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            gap: 5px;
 
-    <!-- CSS propio -->
-    <link rel="stylesheet" href="./css/styles.css">
+            grid-template-areas:
+                "header header header header"
+                "nav nav nav nav"
+                "sidebar contenido contenido contenido"
+                "footer footer footer footer";
+        }
+        .nav{
+            grid-area: nav;
+            background: #b5bec5;
+        }
+        .nav a{
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
 
-    <!--google fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 
-    <!--favicon-->
-    <link rel="icon" type="image/png" href="https://cdn.iconscout.com/icon/premium/png-512-thumb/clase-de-matematicas-icon-svg-download-png-981306.png?f=webp&w=256">
+        .header {
+            grid-area: header;
+            background: #66cc8d;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background: #1f6654;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar div a{
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 10px 20px;
+        }
+
+        .contenido {
+            grid-area: contenido;
+            background: #e0e2e2;
+        }
+
+        .footer {
+            grid-area: footer;
+            background: #66cc8d;
+        }
+
+        .footer a{
+            color: white;
+            text-decoration: none;
+        }
+
+        .area-item {
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        header{
+            display: flex;
+        }
+
+        header img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        @media (max-width: 576px) {
+            .grid-area {
+                display: grid;
+                grid-template-rows: 12vh 7vh 8vh 65vh 5vh;
+
+                gap: 5px;
+
+                grid-template-areas:
+                    "header header header header"
+                    "nav nav nav nav"
+                    "sidebar sidebar sidebar sidebar"
+                    "contenido contenido contenido contenido"
+                    "footer footer footer footer";
+            }
+
+            .sidebar div a{
+                display: flex;
+                color: white;
+                text-decoration: none;
+                margin: 0px 5px;
+            }
+            .sidebar div{
+                display: flex;
+            }
+            h1{
+                font-size: 1.2rem;
+            }
+            .header{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+
+
+    </style>
 </head>
-
 <body>
 
-    <!-- ENCABEZADO -->
-    <header class="bg-dark text-white text-center p-3">
-        <h1>Bootstrap y CSS Grid - Animales Domésticos</h1>
-    </header>
+    <div class="grid-area">
 
+        <header class="area-item header">
+            <img src="https://carrerasuniversitarias.com.co/logos/original/logo-universidad-industrial-de-santander.webp" alt="logo uis">
+            <h1>UNIVERSIDAD INDUSTRIAL DE SANTANDER</h1>
+        </header>
 
-    <!-- MENÚ -->
-    <nav class="navbar navbar-dark bg-secondary">
-
-        <div class="container justify-content-space-arround">
-
-            <a class="nav-link text-white"
-                href="carrusel.html"
-                target="contenido"
-                title="Ir al inicio">
-                Inicio
-            </a>
-
-            <a class="nav-link text-white"
-                href="#audios"
-                title="Ver audios">
-                Audios
-            </a>
-
-            <a class="nav-link text-white"
-                href="#videos"
-                title="Ver videos">
-                Videos
-            </a>
-
-            <a class="nav-link text-white"
-                href="#cuento"
-                title="Leer cuento">
-                Cuento
-            </a>
-
-            <a class="nav-link text-white"
-                href="#integrantes"
-                title="Ver integrantes">
-                Integrantes
-            </a>
-
+        <div class="area-item nav">
+            <nav class="navbar navbar-dark bg-secondary">
+                <div class="container justify-content-space-arround">
+                    <a class="nav-link text-white"
+                        href="formulario.html"
+                        target="frame"
+                        title="Ir al inicio">
+                        Formulario HTML 5
+                    </a>
+                    <a class="nav-link text-white"
+                        href="https://es.wikipedia.org/wiki/Animales_dom%C3%A9sticos"
+                        title="Ver audios"
+                        target="frame">
+                        Wikipedia
+                    </a>
+                    <a class="nav-link text-white"
+                        href="foto.html"
+                        title="Ver videos"
+                        target="frame">
+                        Una fotografia
+                    </a>
+                </div>
+            </nav>
         </div>
 
-    </nav>
 
+        <div class="area-item sidebar">
+            <div>
+                <a href="cuento.html" target="frame">Cuento</a>
+                <a href="arcoiris.html" target="frame">Arcoiris</a>
+                <a href="carrusel.html" target="frame">Mosaico</a>
+                <a href="videos.html" target="frame">Multimedia</a>
+                <a href="que_mascota.html" target="frame">mascota!</a>
+                <a href="IA.html" target="frame">IA</a>
+            </div>
+        </div>
 
-    <!-- CARRUSEL -->
-    <div class="container-fluid p-0">
+        <div class="area-item contenido">
+            <iframe
+                name="frame"
+                width="100%"
+                height="100%"
+                style="border: 1px solid black;">
+            </iframe>
+        </div>
 
-        <iframe
-            src="carrusel.html"
-            name="contenido">
-        </iframe>
-
-    </div>
-
-    <!--que mascota eres-->
-    <div class="container text-center mt-4">
-
-        <h2>🐾 ¿Qué mascota eres?</h2>
-
-        <select id="mascota" class="form-select w-50 mx-auto">
-            <option value="">Selecciona una mascota</option>
-            <option value="perro">🐶 Perro</option>
-            <option value="gato">🐱 Gato</option>
-            <option value="conejo">🐰 Conejo</option>
-            <option value="hamster">🐹 Hámster</option>
-        </select>
-
-        <button class="btn btn-primary mt-3" onclick="mostrarResultado()">
-            Descubrir
-        </button>
-
-        <div id="resultado" class="alert alert-info mt-3 w-50 mx-auto">
-            Aquí aparecerá el resultado.
+        <div class="area-item footer">
+            <a href="footer.html" target="frame">integrantes</a>
         </div>
 
     </div>
-
-
-    <!-- ARCOIRIS -->
-    <section class="arcoiris text-center p-4">
-
-        <span class="rojo">A</span>
-        <span class="naranja">N</span>
-        <span class="amarillo">I</span>
-        <span class="verde">M</span>
-        <span class="azul">A</span>
-        <span class="morado">L</span>
-        <span class="rosado">E</span>
-        <span class="rojo">S</span>
-
-    </section>
-
-
-    <!-- CUENTO -->
-    <section id="cuento" class="container p-4">
-
-        <h2>El cuento</h2>
-
-        <p>
-            Toto miró al cielo y vio una nube con forma de hueso.
-            —¡Un hueso gigante! —ladró contento.
-            Corrió y corrió, pero la nube se alejaba. Se sentó cansado, mirando cómo el viento la movía. Entonces, otra nube apareció, con forma de perro.
-            —¡Un amigo! —dijo Toto.
-            Desde ese día jugaba con las nubes todas las tardes.
-        </p>
-
-    </section>
-
-
-    <!-- AUDIOS -->
-    <section id="audios" class="container p-4">
-
-        <h2>Audios</h2>
-
-        <div class="grid-audios">
-
-            <div class="card p-3 text-center">
-                <h3>Audio 1</h3>
-                <audio controls>
-                    <source src="./audios/Bôa - Duvet.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-
-            <div class="card p-3 text-center">
-                <h3>Audio 2</h3>
-                <audio controls>
-                    <source src="./audios/Lovers Rock.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-
-            <div class="card p-3 text-center">
-                <h3>Audio 3</h3>
-                <audio controls>
-                    <source src="./audios/I Wanna Be Yours.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-
-            <div class="card p-3 text-center">
-                <h3>Audio 4</h3>
-                <audio controls>
-                    <source src="./audios/Coldplay - Viva La Vida (Official Video).mp3" type="audio/mpeg">
-                </audio>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- VIDEOS -->
-    <section id="videos" class="container p-4">
-
-        <h2>Videos</h2>
-
-        <div class="grid-videos">
-
-            <div class="card p-3">
-                <h3>Video 1</h3>
-
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/JMoA2fwmJuI?si=yY604ksE8xUWLgzA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-
-            <div class="card p-3">
-                <h3>Video 2</h3>
-
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/-WpYLl3Wd3U?si=0U4z5keTU94fOHi9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer id="integrantes" class="bg-dark text-white text-center p-4">
-
-        <h2>Integrantes</h2>
-
-        <div class="grid-integrantes">
-
-            <div>
-                <b>Integrante 1</b>
-                <p>Jorge Alejandro González Chaparro</p>
-            </div>
-
-            <div>
-                <b>Integrante 2</b>
-                <p>Miguel Angel Diaz Riatiga</p>
-            </div>
-
-            <div>
-                <b>Integrante 3</b>
-                <p>Jheiber Jhoandry Mesa Benitez</p>
-            </div>
-
-            <div>
-                <b>Integrante 4</b>
-                <p>Christian Leonardo Santos Marquez</p>
-            </div>
-        </div>
-
-    </footer>
-    <script>
-    function mostrarResultado() {
-
-        let mascota = document.getElementById("mascota").value;
-        let resultado = document.getElementById("resultado");
-
-        if (mascota === "perro") {
-            resultado.innerHTML = "🐶 Eres una persona activa y sociable.";
-        }
-        else if (mascota === "gato") {
-            resultado.innerHTML = "🐱 Eres una persona independiente y tranquila.";
-        }
-        else if (mascota === "conejo") {
-            resultado.innerHTML = "🐰 Eres una persona tranquila y cariñosa.";
-        }
-        else if (mascota === "hamster") {
-            resultado.innerHTML = "🐹 Eres una persona curiosa y divertida.";
-        }
-        else {
-            resultado.innerHTML = "Selecciona una mascota.";
-        }
-    }
-    </script>
 </body>
 </html>
