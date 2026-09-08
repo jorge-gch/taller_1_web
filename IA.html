@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi IA</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .chat {
+            width: 500px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #respuesta {
+            min-height: 150px;
+            background-color: #eeeeee;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="chat">
+
+        <h1>🤖 Mi IA</h1>
+
+        <div id="respuesta">
+            Escribe una pregunta...
+        </div>
+
+        <textarea id="pregunta"
+            placeholder="Pregúntale algo a la IA..."></textarea>
+
+        <button onclick="preguntarIA()">
+            Preguntar
+        </button>
+
+    </div>
+
+    <script>
+
+        async function preguntarIA() {
+
+            // Obtener lo que escribió el usuario
+            const pregunta = document.getElementById("pregunta").value;
+
+            // Obtener el lugar donde mostraremos la respuesta
+            const respuesta = document.getElementById("respuesta");
+
+            // Verificar que haya una pregunta
+            if (pregunta.trim() === "") {
+                respuesta.innerText = "Escribe una pregunta.";
+                return;
+            }
+
+            respuesta.innerText = "🤔 Pensando...";
+
+            try {
+
+                // URL de la API
+                const url =
+                    "https://text.pollinations.ai/" +
+                    encodeURIComponent(pregunta);
+
+                // Hacer la petición
+                const resultado = await fetch(url);
+
+                // Convertir la respuesta a texto
+                const texto = await resultado.text();
+
+                // Mostrar respuesta
+                respuesta.innerText = texto;
+
+            } catch (error) {
+
+                respuesta.innerText =
+                    "❌ Ocurrió un error al conectar con la IA.";
+
+                console.error(error);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
+
