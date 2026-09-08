@@ -106,7 +106,15 @@ body > .container-fluid iframe {
 }
 
 
+/*texto arcoirirs*/
+#arc  p::first-letter {
+    font-size: 40px;
+    font-weight: bold;
+}
 
+#arc {
+    font-family: 'Poppins', sans-serif;
+}
 
 
 /* RESPONSIVE */
